@@ -5,8 +5,11 @@ Intended to be a DEX spellcaster.  May be a full or half caster, we haven't deci
 
 ## Basic Mechanics
 
+### Proficiencies
+**Saving Throws:** Dexterity
+
 ### Cantrips
-You know 1 + your Intelligence or Wisdom modifier cantrips, minimum 1.  You are so familiar with the folds necessary to cast these spells, that you can create the effect at will, by miming the process
+Cantrips known are determined by your Archetype.
 
 ### Preparing and Casting Spells
 All spells are cast as rituals, stored in pre-folded origami pieces which lose their magic at the end of a long rest.  Any origami that remains at the end of the day can be easily unfolded and returned to your binder. The caster can maintain up to their Orimagi levels in spell slots worth of magic origami at once.
@@ -17,7 +20,7 @@ Casting the prepared spell requires releasing the energy contained therein, requ
 For example, the [Revivify](https://www.dndbeyond.com/spells/revivify) spell is 3rd level, takes 1 Action to cast, and requires verbal, somatic, and material components (300gp of diamonds, which are consumed).  An Orimagi would take `30 - (3 x DEX)` (`15-30`) minutes to prepare this spell at some point during the day, then could cast it once as an action.  At the time of the casting, the material components must be present <sup>Should this apply also at the time of storing the spell?</sup>.  Casting a spell in this way consumes the origami figure.  You must use the origami as a spellcasting focus for your orimagi spells.
 
 ### Spellcasting Ability
-**Spell save D** = 8 + your proficiency bonus + your Intelligence or Wisdom modifier
+**Spell save D** = 8 + your proficiency bonus + your Dexterity modifier
 
 **Spell attack modifier** = your proficiency bonus + your Dexterity modifier
 
@@ -28,6 +31,12 @@ For example, the [Revivify](https://www.dndbeyond.com/spells/revivify) spell is 
 Name Ideas
   - Orikami (god/diety/divinity/spirit)
 
+### Additional Proficiencies
+**Saving Throws:** Wisdom
+
+### Cantrips
+You know 1 + your Wisdom modifier cantrips, minimum 1.  You are so familiar with the folds necessary to cast these spells, that you can create the effect at will, by miming the process.
+
 ### Divine Magic
 Magical power derived from a patron diety allows you to fold divine magic into your origami, and allows you to store up to two times your Orimagi levels in spell slots worth of origami at once.  Your spellcasting ability is Wisdom.
 
@@ -35,12 +44,24 @@ Magical power derived from a patron diety allows you to fold divine magic into y
   - Orimahō (magic/sorcery)
   - Oribodai (knowledge)
 
+### Additional Proficiencies
+**Saving Throws:** Intelligence
+
+### Cantrips
+You know 1 + your Intelligence modifier cantrips, minimum 1.  You are so familiar with the folds necessary to cast these spells, that you can create the effect at will, by miming the process.
+
 ### Arcane Magic
 You derive your power from studying/tinkering/fidgeting with arcane magic, allowing you to fold this arcane power into your origami, and allows you to store up to two times your Orimagi levels in spell slots worth of origami at once.  Your spellcasting ability is Intelligence.
 
 ## Martial Half Caster
   - Oriken (blade/sabre/bayonet/sting/clock hand) or (health/strength)
   - Oribuyoku (force/military strength/armed might)
+
+### Cantrips
+You know 1 + half your Dexterity modifier cantrips, minimum 1.  You are so familiar with the folds necessary to cast these spells, that you can create the effect at will, by miming the process.
+
+### Additional Proficiencies
+**Saving Throws:** Constitution
 
 ### Ki Magic (or something similar)
 You are able to draw on your own powers of focus, and your body's spiritual essence to animate your origami.  It allows you to augment your own physical abilities with origami creations and spells.

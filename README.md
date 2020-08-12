@@ -29,14 +29,14 @@ Name Ideas
   - Orikami (god/diety/divinity/spirit)
 
 ### Divine Magic
-Magical power derived from a patron diety allows you to fold divine magic into your origami, and allows you to store up to two times your Orimagi levels in spell slots worth of origami at once.
+Magical power derived from a patron diety allows you to fold divine magic into your origami, and allows you to store up to two times your Orimagi levels in spell slots worth of origami at once.  Your spellcasting ability is Wisdom.
 
 ## Arcane Full Caster
   - Orimahō (magic/sorcery)
   - Oribodai (knowledge)
 
 ### Arcane Magic
-You derive your power from studying/tinkering/fidgeting with arcane magic, allowing you to fold this arcane power into your origami, and allows you to store up to two times your Orimagi levels in spell slots worth of origami at once.
+You derive your power from studying/tinkering/fidgeting with arcane magic, allowing you to fold this arcane power into your origami, and allows you to store up to two times your Orimagi levels in spell slots worth of origami at once.  Your spellcasting ability is Intelligence.
 
 ## Martial Half Caster
   - Oriken (blade/sabre/bayonet/sting/clock hand) or (health/strength)

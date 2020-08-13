@@ -76,7 +76,7 @@ Further ideas/thoughts:
 You know 1 + your Wisdom modifier cantrips, minimum 1.  You are so familiar with the folds necessary to cast these spells, that you can create the effect at will, by miming the process.
 
 ### Divine Magic
-Magical power derived from a patron diety allows you to fold divine magic into your origami, and allows you to store up to two times your Orimagi levels in spell slots worth of origami at once.  Your spellcasting ability is Wisdom.
+Magical power derived from a patron diety allows you to fold divine magic into your origami, and allows you to store up to two times your Orimagi levels in spell slots worth of origami at once.
 
 
 ## Arcane Full Caster
@@ -115,7 +115,7 @@ Magical power derived from a patron diety allows you to fold divine magic into y
 You know 1 + your Intelligence modifier cantrips, minimum 1.  You are so familiar with the folds necessary to cast these spells, that you can create the effect at will, by miming the process.
 
 ### Arcane Magic
-You derive your power from studying/tinkering/fidgeting with arcane magic, allowing you to fold this arcane power into your origami, and allows you to store up to two times your Orimagi levels in spell slots worth of origami at once.  Your spellcasting ability is Intelligence.
+You derive your power from studying/tinkering/fidgeting with arcane magic, allowing you to fold this arcane power into your origami, and allows you to store up to two times your Orimagi levels in spell slots worth of origami at once.
 
 
 ## Martial Half Caster

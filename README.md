@@ -15,7 +15,9 @@ Cantrips known are determined by your Archetype.
 
 The Orimagi archetype table shows how many spell slots you have to cast your orimagi spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell’s level or higher. You regain all expended spell slots when you finish a long rest.
 
-Orimagi must fold figurines which hold their spells for the day.  The Orimagi archetype table shows the number of spells you can maintain at any one time.  Once a spell is cast, you are able to prepare additional spells up to your spell limit, as long as you are able to fold an origimai figurine.  Preparing a spell in this way takes `10 - your Dexterity modifier` minutes per spell level for each spell you fold.  The magic in a prepared spell dissipates if it leaves the possession of the Orimagi that folded it.
+Orimagi must fold figurines which hold their spells for the day.  The Orimagi archetype table shows the number of spells you can maintain at any one time.  Once a spell is cast, you are able to prepare additional spells up to your spell limit, as long as you are able to fold an origimai figurine.  Preparing a spell in this way takes `10 - your Dexterity modifier` minutes per level of the spell slot for each spell you fold.  In order to cast spells at a higher level, they must be prepared at that level.  The magic in a prepared spell dissipates if it leaves the possession of the Orimagi that folded it.
+
+Prepared spells can be reclaimed without expending any spell slots by unfolding them as an action.
 
 Casting the prepared spell requires releasing the energy contained therein by using the normal verbal, somatic, and/or material components of the spell.
 For example, the [Revivify](https://www.dndbeyond.com/spells/revivify) spell is 3rd level, takes 1 Action to cast, and requires verbal, somatic, and material components (300gp of diamonds, which are consumed).  An Orimagi would take `30 - (3 x DEX)` (`15-30`) minutes to prepare this spell at some point during the day, then could cast it once as an action.  At the time of the casting, the material components must be present <sup>Should this apply also at the time of storing the spell?</sup>.  Casting a spell in this way consumes the origami figure.  You must use the origami as a spellcasting focus for your orimagi spells.
@@ -23,14 +25,6 @@ For example, the [Revivify](https://www.dndbeyond.com/spells/revivify) spell is 
 **Spellcasting Focus**
 
 Your origami counts as a spellcasting focus for your Orimagi spells.
-
-
-Further ideas/thoughts:
-- Upcasting spells must be done in advance, with preparation time being based on the spell slot.
-- Spells can be reclaimed without expending the spell slot by unfolding them.
-  - Unfolded spells can be folded into one new spell but only require the time difference to swap, minimum of `10 - your Dexterity modifier` minutes.<br/>
-    For example: An Orimagi with Dexterity 16 and at least two levels left to their origami cap<sup>**name?**</sup> could swap [Magic Missile](https://www.dndbeyond.com/spells/magic-missile) for [Fireball](https://www.dndbeyond.com/spells/fireball) in 14 minutes: `(10 - 3) x 3 - (10 - 3) x 1`
-
 
 ### Spellcasting Ability
 **Spell save DC** = 8 + your proficiency bonus + your Dexterity modifier

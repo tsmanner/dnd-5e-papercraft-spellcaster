@@ -37,6 +37,10 @@ Further ideas/thoughts:
 
 **Spell attack modifier** = your proficiency bonus + your Dexterity modifier
 
+### Papercraft Familiar <sup>All Archetypes?</sup>
+You learn the [Find Familiar](https://www.dndbeyond.com/spells/find-familiar) spell, which you can cast without expending a spell slot.  The familiar you create is an animated origami version of the creature you choose.
+- Arcane Archetype gets improved familiar?
+
 
 ## Archetypes
 
@@ -46,31 +50,34 @@ Further ideas/thoughts:
 
 ### The Orikami Table
 ---
-| Level | Proficiency<br/>Bonus | Features | Origami Cap | 1st | 2nd | 3rd | 4th | 5th | 6th | 7th | 8th | 9th |
-|-------|-----------------------|----------|-------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-|     1 |                    +2 |          |           2 |   2 |   - |   - |   - |   - |   - |   - |   - |   - |
-|     2 |                    +2 |          |           4 |   3 |   - |   - |   - |   - |   - |   - |   - |   - |
-|     3 |                    +2 |          |           6 |   4 |   2 |   - |   - |   - |   - |   - |   - |   - |
-|     4 |                    +2 |          |           8 |   4 |   3 |   - |   - |   - |   - |   - |   - |   - |
-|     5 |                    +3 |          |          10 |   4 |   3 |   2 |   - |   - |   - |   - |   - |   - |
-|     6 |                    +3 |          |          12 |   4 |   3 |   3 |   - |   - |   - |   - |   - |   - |
-|     7 |                    +3 |          |          14 |   4 |   3 |   3 |   1 |   - |   - |   - |   - |   - |
-|     8 |                    +3 |          |          16 |   4 |   3 |   3 |   2 |   - |   - |   - |   - |   - |
-|     9 |                    +4 |          |          18 |   4 |   3 |   3 |   3 |   1 |   - |   - |   - |   - |
-|    10 |                    +4 |          |          20 |   4 |   3 |   3 |   3 |   2 |   - |   - |   - |   - |
-|    11 |                    +4 |          |          22 |   4 |   3 |   3 |   3 |   2 |   1 |   - |   - |   - |
-|    12 |                    +4 |          |          24 |   4 |   3 |   3 |   3 |   2 |   1 |   - |   - |   - |
-|    13 |                    +5 |          |          26 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   - |   - |
-|    14 |                    +5 |          |          28 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   - |   - |
-|    15 |                    +5 |          |          30 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |   - |
-|    16 |                    +5 |          |          32 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |   - |
-|    17 |                    +6 |          |          34 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |   1 |
-|    18 |                    +6 |          |          36 |   4 |   3 |   3 |   3 |   3 |   1 |   1 |   1 |   1 |
-|    19 |                    +6 |          |          38 |   4 |   3 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |
-|    20 |                    +6 |          |          40 |   4 |   3 |   3 |   3 |   3 |   2 |   2 |   1 |   1 |
+| Level | Proficiency<br/>Bonus | Features | Spells<br/>Known | Origami Cap | 1st | 2nd | 3rd | 4th | 5th | 6th | 7th | 8th | 9th |
+|-------|-----------------------|----------|------------------|-------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|     1 |                    +2 |          |                2 |           2 |   2 |   - |   - |   - |   - |   - |   - |   - |   - |
+|     2 |                    +2 |          |                3 |           4 |   3 |   - |   - |   - |   - |   - |   - |   - |   - |
+|     3 |                    +2 |          |                5 |           6 |   4 |   2 |   - |   - |   - |   - |   - |   - |   - |
+|     4 |                    +2 |          |                6 |           8 |   4 |   3 |   - |   - |   - |   - |   - |   - |   - |
+|     5 |                    +3 |          |                8 |          10 |   4 |   3 |   2 |   - |   - |   - |   - |   - |   - |
+|     6 |                    +3 |          |                9 |          12 |   4 |   3 |   3 |   - |   - |   - |   - |   - |   - |
+|     7 |                    +3 |          |               11 |          14 |   4 |   3 |   3 |   1 |   - |   - |   - |   - |   - |
+|     8 |                    +3 |          |               12 |          16 |   4 |   3 |   3 |   2 |   - |   - |   - |   - |   - |
+|     9 |                    +4 |          |               14 |          18 |   4 |   3 |   3 |   3 |   1 |   - |   - |   - |   - |
+|    10 |                    +4 |          |               15 |          20 |   4 |   3 |   3 |   3 |   2 |   - |   - |   - |   - |
+|    11 |                    +4 |          |               17 |          22 |   4 |   3 |   3 |   3 |   2 |   1 |   - |   - |   - |
+|    12 |                    +4 |          |               18 |          24 |   4 |   3 |   3 |   3 |   2 |   1 |   - |   - |   - |
+|    13 |                    +5 |          |               20 |          26 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   - |   - |
+|    14 |                    +5 |          |               21 |          28 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   - |   - |
+|    15 |                    +5 |          |               23 |          30 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |   - |
+|    16 |                    +5 |          |               24 |          32 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |   - |
+|    17 |                    +6 |          |               26 |          34 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |   1 |
+|    18 |                    +6 |          |               27 |          36 |   4 |   3 |   3 |   3 |   3 |   1 |   1 |   1 |   1 |
+|    19 |                    +6 |          |               29 |          38 |   4 |   3 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |
+|    20 |                    +6 |          |               30 |          40 |   4 |   3 |   3 |   3 |   3 |   2 |   2 |   1 |   1 |
 
 ### Additional Proficiencies
 **Saving Throws:** Wisdom
+
+### Spell List
+Cleric? Some Druid?
 
 ### Cantrips
 You know 1 + your Wisdom modifier cantrips, minimum 1.  You are so familiar with the folds necessary to cast these spells, that you can create the effect at will, by miming the process.
@@ -78,6 +85,7 @@ You know 1 + your Wisdom modifier cantrips, minimum 1.  You are so familiar with
 ### Divine Magic
 Magical power derived from a patron diety allows you to fold divine magic into your origami, and allows you to store up to two times your Orimagi levels in spell slots worth of origami at once.
 
+### 
 
 ## Arcane Full Caster
   - Orimahō (magic/sorcery)
@@ -85,37 +93,43 @@ Magical power derived from a patron diety allows you to fold divine magic into y
 
 ### The Orimaho/Oribodai Table
 ---
-| Level | Proficiency<br/>Bonus | Features | Origami Cap | 1st | 2nd | 3rd | 4th | 5th | 6th | 7th | 8th | 9th |
-|-------|-----------------------|----------|-------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-|     1 |                    +2 |          |           2 |   2 |   - |   - |   - |   - |   - |   - |   - |   - |
-|     2 |                    +2 |          |           4 |   3 |   - |   - |   - |   - |   - |   - |   - |   - |
-|     3 |                    +2 |          |           6 |   4 |   2 |   - |   - |   - |   - |   - |   - |   - |
-|     4 |                    +2 |          |           8 |   4 |   3 |   - |   - |   - |   - |   - |   - |   - |
-|     5 |                    +3 |          |          10 |   4 |   3 |   2 |   - |   - |   - |   - |   - |   - |
-|     6 |                    +3 |          |          12 |   4 |   3 |   3 |   - |   - |   - |   - |   - |   - |
-|     7 |                    +3 |          |          14 |   4 |   3 |   3 |   1 |   - |   - |   - |   - |   - |
-|     8 |                    +3 |          |          16 |   4 |   3 |   3 |   2 |   - |   - |   - |   - |   - |
-|     9 |                    +4 |          |          18 |   4 |   3 |   3 |   3 |   1 |   - |   - |   - |   - |
-|    10 |                    +4 |          |          20 |   4 |   3 |   3 |   3 |   2 |   - |   - |   - |   - |
-|    11 |                    +4 |          |          22 |   4 |   3 |   3 |   3 |   2 |   1 |   - |   - |   - |
-|    12 |                    +4 |          |          24 |   4 |   3 |   3 |   3 |   2 |   1 |   - |   - |   - |
-|    13 |                    +5 |          |          26 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   - |   - |
-|    14 |                    +5 |          |          28 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   - |   - |
-|    15 |                    +5 |          |          30 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |   - |
-|    16 |                    +5 |          |          32 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |   - |
-|    17 |                    +6 |          |          34 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |   1 |
-|    18 |                    +6 |          |          36 |   4 |   3 |   3 |   3 |   3 |   1 |   1 |   1 |   1 |
-|    19 |                    +6 |          |          38 |   4 |   3 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |
-|    20 |                    +6 |          |          40 |   4 |   3 |   3 |   3 |   3 |   2 |   2 |   1 |   1 |
+| Level | Proficiency<br/>Bonus | Features | Spells<br/>Known | Origami Cap | 1st | 2nd | 3rd | 4th | 5th | 6th | 7th | 8th | 9th |
+|-------|-----------------------|----------|------------------|-------------|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+|     1 |                    +2 |          |                2 |           2 |   2 |   - |   - |   - |   - |   - |   - |   - |   - |
+|     2 |                    +2 |          |                3 |           4 |   3 |   - |   - |   - |   - |   - |   - |   - |   - |
+|     3 |                    +2 |          |                5 |           6 |   4 |   2 |   - |   - |   - |   - |   - |   - |   - |
+|     4 |                    +2 |          |                6 |           8 |   4 |   3 |   - |   - |   - |   - |   - |   - |   - |
+|     5 |                    +3 |          |                8 |          10 |   4 |   3 |   2 |   - |   - |   - |   - |   - |   - |
+|     6 |                    +3 |          |                9 |          12 |   4 |   3 |   3 |   - |   - |   - |   - |   - |   - |
+|     7 |                    +3 |          |               11 |          14 |   4 |   3 |   3 |   1 |   - |   - |   - |   - |   - |
+|     8 |                    +3 |          |               12 |          16 |   4 |   3 |   3 |   2 |   - |   - |   - |   - |   - |
+|     9 |                    +4 |          |               14 |          18 |   4 |   3 |   3 |   3 |   1 |   - |   - |   - |   - |
+|    10 |                    +4 |          |               15 |          20 |   4 |   3 |   3 |   3 |   2 |   - |   - |   - |   - |
+|    11 |                    +4 |          |               17 |          22 |   4 |   3 |   3 |   3 |   2 |   1 |   - |   - |   - |
+|    12 |                    +4 |          |               18 |          24 |   4 |   3 |   3 |   3 |   2 |   1 |   - |   - |   - |
+|    13 |                    +5 |          |               20 |          26 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   - |   - |
+|    14 |                    +5 |          |               21 |          28 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   - |   - |
+|    15 |                    +5 |          |               23 |          30 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |   - |
+|    16 |                    +5 |          |               24 |          32 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |   - |
+|    17 |                    +6 |          |               26 |          34 |   4 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |   1 |
+|    18 |                    +6 |          |               27 |          36 |   4 |   3 |   3 |   3 |   3 |   1 |   1 |   1 |   1 |
+|    19 |                    +6 |          |               29 |          38 |   4 |   3 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |
+|    20 |                    +6 |          |               30 |          40 |   4 |   3 |   3 |   3 |   3 |   2 |   2 |   1 |   1 |
 
 ### Additional Proficiencies
 **Saving Throws:** Intelligence
+
+### Spell List
+Wizard? Sorcerer? Some Druid?
 
 ### Cantrips
 You know 1 + your Intelligence modifier cantrips, minimum 1.  You are so familiar with the folds necessary to cast these spells, that you can create the effect at will, by miming the process.
 
 ### Arcane Magic
 You derive your power from studying/tinkering/fidgeting with arcane magic, allowing you to fold this arcane power into your origami, and allows you to store up to two times your Orimagi levels in spell slots worth of origami at once.
+
+### Folding Patterns
+You are able to find patterns in the way the folds of your origami affect the spells they represent.  You are able to fold your origami so that small modifications to it can change the spell contained within.  As a bonus action you can change the spell slot by 1 level, or change the spell to another spell of the same school, that can be cast at the same level.  To cast the modified spell, you still follow the normal rules for casting a spel.  You can use this feature a number of times equal to your Intelligence modifier per day, minimum once.
 
 
 ## Martial Half Caster
@@ -124,34 +138,44 @@ You derive your power from studying/tinkering/fidgeting with arcane magic, allow
 
 ### The Oriken/Oribuyoku Table
 ---
-| Level | Proficiency<br/>Bonus | Features | Origami Cap | 1st | 2nd | 3rd | 4th |
-|-------|-----------------------|----------|-------------|-----|-----|-----|-----|
-|     1 |                    +2 |          |           1 |   2 |   - |   - |   - |
-|     2 |                    +2 |          |           2 |   3 |   - |   - |   - |
-|     3 |                    +2 |          |           3 |   3 |   - |   - |   - |
-|     4 |                    +2 |          |           4 |   3 |   - |   - |   - |
-|     5 |                    +3 |          |           5 |   4 |   - |   - |   - |
-|     6 |                    +3 |          |           6 |   4 |   - |   - |   - |
-|     7 |                    +3 |          |           7 |   4 |   2 |   - |   - |
-|     8 |                    +3 |          |           8 |   4 |   2 |   - |   - |
-|     9 |                    +4 |          |           9 |   4 |   2 |   - |   - |
-|    10 |                    +4 |          |          10 |   4 |   3 |   - |   - |
-|    11 |                    +4 |          |          11 |   4 |   3 |   - |   - |
-|    12 |                    +4 |          |          12 |   4 |   3 |   - |   - |
-|    13 |                    +5 |          |          13 |   4 |   3 |   2 |   - |
-|    14 |                    +5 |          |          14 |   4 |   3 |   2 |   - |
-|    15 |                    +5 |          |          15 |   4 |   3 |   2 |   - |
-|    16 |                    +5 |          |          16 |   4 |   3 |   3 |   - |
-|    17 |                    +6 |          |          17 |   4 |   3 |   3 |   - |
-|    18 |                    +6 |          |          18 |   4 |   3 |   3 |   - |
-|    19 |                    +6 |          |          19 |   4 |   3 |   3 |   1 |
-|    20 |                    +6 |          |          20 |   4 |   3 |   3 |   1 |
-
-### Cantrips
-You know 1 + half your Dexterity modifier cantrips, minimum 1.  You are so familiar with the folds necessary to cast these spells, that you can create the effect at will, by miming the process.
+| Level | Proficiency<br/>Bonus | Features | Spells<br/>Known | Origami Cap | 1st | 2nd | 3rd | 4th |
+|-------|-----------------------|----------|------------------|-------------|-----|-----|-----|-----|
+|     1 |                    +2 |          |                2 |           1 |   2 |   - |   - |   - |
+|     2 |                    +2 |          |                2 |           2 |   3 |   - |   - |   - |
+|     3 |                    +2 |          |                3 |           3 |   3 |   - |   - |   - |
+|     4 |                    +2 |          |                4 |           4 |   3 |   - |   - |   - |
+|     5 |                    +3 |          |                4 |           5 |   4 |   - |   - |   - |
+|     6 |                    +3 |          |                4 |           6 |   4 |   - |   - |   - |
+|     7 |                    +3 |          |                5 |           7 |   4 |   2 |   - |   - |
+|     8 |                    +3 |          |                6 |           8 |   4 |   2 |   - |   - |
+|     9 |                    +4 |          |                6 |           9 |   4 |   2 |   - |   - |
+|    10 |                    +4 |          |                7 |          10 |   4 |   3 |   - |   - |
+|    11 |                    +4 |          |                8 |          11 |   4 |   3 |   - |   - |
+|    12 |                    +4 |          |                8 |          12 |   4 |   3 |   - |   - |
+|    13 |                    +5 |          |                9 |          13 |   4 |   3 |   2 |   - |
+|    14 |                    +5 |          |               10 |          14 |   4 |   3 |   2 |   - |
+|    15 |                    +5 |          |               10 |          15 |   4 |   3 |   2 |   - |
+|    16 |                    +5 |          |               11 |          16 |   4 |   3 |   3 |   - |
+|    17 |                    +6 |          |               11 |          17 |   4 |   3 |   3 |   - |
+|    18 |                    +6 |          |               11 |          18 |   4 |   3 |   3 |   - |
+|    19 |                    +6 |          |               12 |          19 |   4 |   3 |   3 |   1 |
+|    20 |                    +6 |          |               13 |          20 |   4 |   3 |   3 |   1 |
 
 ### Additional Proficiencies
 **Saving Throws:** Constitution
 
+### Spell List
+You know three 1st-level wizard spells of your choice, two of which you must choose from the abjuration and transmutation spells on the wizard spell list.
+
+The Spells Known column of the Oriken/Oribuyoku Table shows when you learn more wizard spells of 1st level or higher. Each of these spells must be an abjuration or transmutation spell of your choice, and must be of a level for which you have spell slots. For instance, when you reach 7th level in this class, you can learn one new spell of 1st or 2nd level.
+
+The spells you learn at 8th, 14th, and 20th level can come from any school of magic.
+
+### Cantrips
+You know 1 + half your Dexterity modifier cantrips, minimum 1.  You are so familiar with the folds necessary to cast these spells, that you can create the effect at will, by miming the process.
+
 ### Ki Magic (or something similar)
 You are able to draw on your own powers of focus, and your body's spiritual essence to animate your origami.  It allows you to augment your own physical abilities with origami creations and spells.
+
+### Paper Cut
+When you hit with a weapon attack, as a (Bonus Action or Part of the Attack), you animate a piece of paper to slice alongside your weapon.  You can add you Paper Cut dice to the damage of your attack, inflicting bonus slashing damage to the target.  The sting of the attack imposes disadvantage on the first attack roll or saving throw made by the creature before the end of your next turn.  You can use this feature a number of times equal to your Constitution modifier per day, minimum once.

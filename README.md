@@ -123,7 +123,7 @@ You know 1 + your Intelligence modifier cantrips, minimum 1.  You are so familia
 You derive your power from studying/tinkering/fidgeting with arcane magic, allowing you to fold this arcane power into your origami, and allows you to store up to two times your Orimagi levels in spell slots worth of origami at once.
 
 ### Folding Patterns
-You are able to find patterns in the way the folds of your origami affect the spells they represent.  You are able to fold your origami so that small modifications to it can change the spell contained within.  As a bonus action you can change the spell slot by 1 level, or change the spell to another spell of the same school, that can be cast at the same level.  To cast the modified spell, you still follow the normal rules for casting a spel.  You can use this feature a number of times equal to your Intelligence modifier per day, minimum once.
+You are able to find patterns in the way the folds of your origami affect the spells they represent.  You are able to fold your origami so that small modifications to it can change the spell contained within.  As a bonus action you can change the spell slot by 1 level, or change the spell to another spell of the same school, that can be cast at the same level.  To cast the modified spell, you still follow the normal rules for casting a spell.  You can use this feature a number of times equal to your Intelligence modifier (a minimum of once). You regain all expended uses when you finish a long rest.
 
 
 ## Martial Half Caster
@@ -172,4 +172,4 @@ You know 1 + half your Dexterity modifier cantrips, minimum 1.  You are so famil
 You are able to draw on your own powers of focus, and your body's spiritual essence to animate your origami.  It allows you to augment your own physical abilities with origami creations and spells.
 
 ### Paper Cut
-When you hit with a weapon attack, as a (Bonus Action or Part of the Attack), you animate a piece of paper to slice alongside your weapon.  You can add you Paper Cut dice to the damage of your attack, inflicting bonus slashing damage to the target.  The sting of the attack imposes disadvantage on the first attack roll or saving throw made by the creature before the end of your next turn.  You can use this feature a number of times equal to your Constitution modifier per day, minimum once.
+When you hit with a weapon attack, as a (Bonus Action or Part of the Attack), you animate a piece of paper to slice alongside your weapon.  You can add you Paper Cut dice to the damage of your attack, inflicting bonus slashing damage to the target.  The sting of the attack imposes disadvantage on the first attack roll or saving throw made by the creature before the end of your next turn.  You can use this feature a number of times equal to your Constitution modifier (a minimum of once). You regain all expended uses when you finish a long rest.

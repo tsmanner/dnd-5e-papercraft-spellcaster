@@ -158,6 +158,12 @@ You are able to find patterns in the way the folds of your origami affect the sp
 ### Additional Proficiencies
 **Saving Throws:** Constitution
 
+### Armor Stuff (Name WIP)
+
+You gain proficiency with medium and heavy armor, and shields.  Your maximum DEX bonus to AC when wearing medium armor is +5, and when wearing heavy armor is +2.
+
+All martial weapons.
+
 ### Spell List
 You know three 1st-level wizard spells of your choice, two of which you must choose from the abjuration and transmutation spells on the wizard spell list.
 
@@ -172,4 +178,4 @@ You know 1 + half your Dexterity modifier cantrips, minimum 1.  You are so famil
 You are able to draw on your own powers of focus, and your body's spiritual essence to animate your origami.  It allows you to augment your own physical abilities with origami creations and spells.
 
 ### Paper Cut
-When you hit with a weapon attack, as a (Bonus Action or Part of the Attack), you animate a piece of paper to slice alongside your weapon.  You can add you Paper Cut dice to the damage of your attack, inflicting bonus slashing damage to the target.  The sting of the attack imposes disadvantage on the first attack roll or saving throw made by the creature before the end of your next turn.  You can use this feature a number of times equal to your Constitution modifier (a minimum of once). You regain all expended uses when you finish a long rest.
+When you hit with a melee attack, as Part of the Attack, you animate a piece of paper to slice alongside your weapon.  You can add you Paper Cut dice to the damage of your attack, inflicting bonus slashing damage to the target.  The sting of the attack imposes disadvantage on the first attack roll or saving throw made by the creature before the end of your next turn.  You can use this feature a number of times equal to your Constitution modifier (a minimum of once). You regain all expended uses when you finish a short rest.

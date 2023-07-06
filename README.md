@@ -79,7 +79,7 @@ You know 1 + your Wisdom modifier cantrips, minimum 1.  You are so familiar with
 ### Divine Magic
 Magical power derived from a patron diety allows you to fold divine magic into your origami, and allows you to store up to two times your Orimagi levels in spell slots worth of origami at once.
 
-### 
+###
 
 ## Arcane Full Caster
   - Orimahō (magic/sorcery)
@@ -132,37 +132,32 @@ You are able to find patterns in the way the folds of your origami affect the sp
 
 ### The Oriken/Oribuyoku Table
 ---
-| Level | Proficiency<br/>Bonus | Features | Spells<br/>Known | Origami Cap | 1st | 2nd | 3rd | 4th | 5th |
-|-------|-----------------------|----------|------------------|-------------|-----|-----|-----|-----|-----|
-|     1 |                    +2 |          |                - |           1 |   - |   - |   - |   - |   - |
-|     2 |                    +2 |          |                2 |           2 |   2 |   - |   - |   - |   - |
-|     3 |                    +2 |          |                3 |           3 |   3 |   - |   - |   - |   - |
-|     4 |                    +2 |          |                4 |           4 |   3 |   - |   - |   - |   - |
-|     5 |                    +3 |          |                4 |           5 |   4 |   2 |   - |   - |   - |
-|     6 |                    +3 |          |                4 |           6 |   4 |   2 |   - |   - |   - |
-|     7 |                    +3 |          |                5 |           7 |   4 |   3 |   - |   - |   - |
-|     8 |                    +3 |          |                6 |           8 |   4 |   3 |   - |   - |   - |
-|     9 |                    +4 |          |                6 |           9 |   4 |   3 |   2 |   - |   - |
-|    10 |                    +4 |          |                7 |          10 |   4 |   3 |   2 |   - |   - |
-|    11 |                    +4 |          |                8 |          11 |   4 |   3 |   3 |   - |   - |
-|    12 |                    +4 |          |                8 |          12 |   4 |   3 |   3 |   - |   - |
-|    13 |                    +5 |          |                9 |          13 |   4 |   3 |   3 |   1 |   - |
-|    14 |                    +5 |          |               10 |          14 |   4 |   3 |   3 |   1 |   - |
-|    15 |                    +5 |          |               10 |          15 |   4 |   3 |   3 |   2 |   - |
-|    16 |                    +5 |          |               11 |          16 |   4 |   3 |   3 |   2 |   - |
-|    17 |                    +6 |          |               11 |          17 |   4 |   3 |   3 |   3 |   1 |
-|    18 |                    +6 |          |               11 |          18 |   4 |   3 |   3 |   3 |   1 |
-|    19 |                    +6 |          |               12 |          19 |   4 |   3 |   3 |   3 |   2 |
-|    20 |                    +6 |          |               13 |          20 |   4 |   3 |   3 |   3 |   2 |
+
+| Level | Proficiency<br/>Bonus |                     Features | Spells<br/>Known | Origami Cap | 1st | 2nd | 3rd | 4th | 5th |
+|-------|-----------------------|------------------------------|------------------|-------------|-----|-----|-----|-----|-----|
+|     1 |                    +2 | Heavy Armor, Martial Weapons |                - |           - |   - |   - |   - |   - |   - |
+|     2 |                    +2 |      Spellcasting, Paper Cut |                2 |           2 |   2 |   - |   - |   - |   - |
+|     3 |                    +2 |                Enhance Armor |                3 |           3 |   3 |   - |   - |   - |   - |
+|     4 |                    +2 |    Ability Score Improvement |                4 |           4 |   3 |   - |   - |   - |   - |
+|     5 |                    +3 |                 Extra Attack |                4 |           5 |   4 |   2 |   - |   - |   - |
+|     6 |                    +3 |                              |                4 |           6 |   4 |   2 |   - |   - |   - |
+|     7 |                    +3 |                              |                5 |           7 |   4 |   3 |   - |   - |   - |
+|     8 |                    +3 |    Ability Score Improvement |                6 |           8 |   4 |   3 |   - |   - |   - |
+|     9 |                    +4 |                              |                6 |           9 |   4 |   3 |   2 |   - |   - |
+|    10 |                    +4 |                              |                7 |          10 |   4 |   3 |   2 |   - |   - |
+|    11 |                    +4 |                              |                8 |          11 |   4 |   3 |   3 |   - |   - |
+|    12 |                    +4 |    Ability Score Improvement |                8 |          12 |   4 |   3 |   3 |   - |   - |
+|    13 |                    +5 |                              |                9 |          13 |   4 |   3 |   3 |   1 |   - |
+|    14 |                    +5 |                              |               10 |          14 |   4 |   3 |   3 |   1 |   - |
+|    15 |                    +5 |                              |               10 |          15 |   4 |   3 |   3 |   2 |   - |
+|    16 |                    +5 |    Ability Score Improvement |               11 |          16 |   4 |   3 |   3 |   2 |   - |
+|    17 |                    +6 |                              |               11 |          17 |   4 |   3 |   3 |   3 |   1 |
+|    18 |                    +6 |                              |               11 |          18 |   4 |   3 |   3 |   3 |   1 |
+|    19 |                    +6 |    Ability Score Improvement |               12 |          19 |   4 |   3 |   3 |   3 |   2 |
+|    20 |                    +6 |                              |               13 |          20 |   4 |   3 |   3 |   3 |   2 |
 
 ### Additional Proficiencies
 **Saving Throws:** Constitution
-
-### Armor Stuff (Name WIP)
-
-You gain proficiency with medium and heavy armor, and shields.  Your maximum DEX bonus to AC when wearing medium armor is +5, and when wearing heavy armor is +2.
-
-All martial weapons.
 
 ### Spell List
 You know three 1st-level wizard spells of your choice, two of which you must choose from the abjuration and transmutation spells on the wizard spell list.
@@ -177,13 +172,13 @@ You gain one of the two spells at the orimagi levels listed in the Oriken Spells
 
 #### Oriken Spells
 
-| Orimagi Level | Spells |
-| ------------- | ------ |
-|  3 | Shield, Transmutation(1st) |
-|  5 | Aid, Transmutation(2nd) |
-|  9 | Haste, Transmutation(3rd) |
-| 13 | Abjuration(4th), Polymorph | 
-| 17 | Abjuration(5th), Transmutation(5th) |
+| Orimagi Level |                                                                                             Spells |
+|---------------|----------------------------------------------------------------------------------------------------|
+|             3 |              Shield                                              ,                    Feather Fall |
+|             5 |                 Aid                                              ,                  Enlarge/Reduce |
+|             9 |        Counterspell<br/>Beacon of Hope<br/>Protection from Energy,                           Haste |
+|            13 | Freedom of Movement                                              ,                       Polymorph |
+|            17 |     Banishing Smite<br/>Circle of Power                          , Animate Objects<br/>Telekenisis |
 
 ### Cantrips
 You know 1 + half your Dexterity modifier cantrips, minimum 1.  You are so familiar with the folds necessary to cast these spells, that you can create the effect at will, by miming the process.
@@ -191,5 +186,17 @@ You know 1 + half your Dexterity modifier cantrips, minimum 1.  You are so famil
 ### Ki Magic (or something similar)
 You are able to draw on your own powers of focus, and your body's spiritual essence to animate your origami.  It allows you to augment your own physical abilities with origami creations and spells.
 
+### Heavy Armor
+
+You gain proficiency with light armor, medium armor, heavy armor, and shields.
+
+### Martial Weapons
+
+You gain proficiency with all simple and martial weapons.
+
 ### Paper Cut
 When you hit with a melee attack, as Part of the Attack, you animate a piece of paper to slice alongside your weapon.  You can add you Paper Cut dice to the damage of your attack, inflicting bonus slashing damage to the target.  The sting of the attack imposes disadvantage on the first attack roll or saving throw made by the creature before the end of your next turn.  You can use this feature a number of times equal to your Constitution modifier (a minimum of once). You regain all expended uses when you finish a short rest.
+
+### Enhance Armor
+
+You gain proficiency with medium and heavy armor, and shields.  Your maximum DEX bonus to AC when wearing medium armor is +5, and when wearing heavy armor is +2.

@@ -172,13 +172,13 @@ You gain one of the two spells at the orimagi levels listed in the Oriken Spells
 
 #### Oriken Spells
 
-| Orimagi Level |                                                                                             Spells |
-|---------------|----------------------------------------------------------------------------------------------------|
-|             3 |              Shield                                              ,                    Feather Fall |
-|             5 |                 Aid                                              ,                  Enlarge/Reduce |
-|             9 |        Counterspell<br/>Beacon of Hope<br/>Protection from Energy,                           Haste |
-|            13 | Freedom of Movement                                              ,                       Polymorph |
-|            17 |     Banishing Smite<br/>Circle of Power                          , Animate Objects<br/>Telekenisis |
+| Orimagi Level |                                                        Abjuration |                   Transmutation |
+|---------------|-------------------------------------------------------------------|---------------------------------|
+|             3 |              Shield                                               |                    Feather Fall |
+|             5 |                 Aid                                               |                  Enlarge/Reduce |
+|             9 |        Counterspell<br/>Beacon of Hope<br/>Protection from Energy |                           Haste |
+|            13 | Freedom of Movement                                               |                       Polymorph |
+|            17 |     Banishing Smite<br/>Circle of Power                           | Animate Objects<br/>Telekenisis |
 
 ### Cantrips
 You know 1 + half your Dexterity modifier cantrips, minimum 1.  You are so familiar with the folds necessary to cast these spells, that you can create the effect at will, by miming the process.

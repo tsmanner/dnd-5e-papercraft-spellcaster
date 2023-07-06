@@ -171,6 +171,20 @@ The Spells Known column of the Oriken/Oribuyoku Table shows when you learn more 
 
 The spells you learn at 8th, 14th, and 20th level can come from any school of magic.
 
+### Known Spells
+
+You gain one of the two spells at the orimagi levels listed in the Oriken Spells table.
+
+#### Oriken Spells
+
+| Orimagi Level | Spells |
+| ------------- | ------ |
+|  3 | Shield, Transmutation(1st) |
+|  5 | Aid, Transmutation(2nd) |
+|  9 | Haste, Transmutation(3rd) |
+| 13 | Abjuration(4th), Polymorph | 
+| 17 | Abjuration(5th), Transmutation(5th) |
+
 ### Cantrips
 You know 1 + half your Dexterity modifier cantrips, minimum 1.  You are so familiar with the folds necessary to cast these spells, that you can create the effect at will, by miming the process.
 

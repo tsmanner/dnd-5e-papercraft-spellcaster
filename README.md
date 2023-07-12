@@ -67,6 +67,14 @@ You learn the [Find Familiar](https://www.dndbeyond.com/spells/find-familiar) sp
 |    19 |                    +6 |                  Ability Score Improvement |                   4 |               29 |          38 |   4 |   3 |   3 |   3 |   3 |   2 |   1 |   1 |   1 |
 |    20 |                    +6 |                                            |                   4 |               30 |          40 |   4 |   3 |   3 |   3 |   3 |   2 |   2 |   1 |   1 |
 
+### Class Features
+---
+
+**Hit Points**
+**Hit Dice**: 1d8 per orimagi level
+**Hit Points at 1st Level**: 8 + your Constitution modifier
+**Hit Points at Higher Levels**: 1d8 (or 5) + your Constitution modifier per orimagi level after 1st
+
 ### Additional Proficiencies
 
 **Saving Throws:** Wisdom
@@ -181,6 +189,11 @@ You are able to find patterns in the way the folds of your origami affect the sp
 |    18 |                    +6 |                              |               11 |          18 |   4 |   3 |   3 |   3 |   1 |
 |    19 |                    +6 |    Ability Score Improvement |               12 |          19 |   4 |   3 |   3 |   3 |   2 |
 |    20 |                    +6 |                              |               13 |          20 |   4 |   3 |   3 |   3 |   2 |
+
+**Hit Points**
+**Hit Dice**: 1d10 per orimagi level
+**Hit Points at 1st Level**: 10 + your Constitution modifier
+**Hit Points at Higher Levels**: 1d10 (or 6) + your Constitution modifier per orimagi level after 1st
 
 ### Additional Proficiencies
 - **Saving Throws:** Constitution

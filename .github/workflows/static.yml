@@ -40,18 +40,15 @@ jobs:
       - name: Generate Markdown
         run: ${{github.workspace}}/build/main ${{github.workspace}} > ${{github.workspace}}/build/index.md
       - name: Generate HTML
-        uses: baileyjm02/markdown-to-pdf@v1.2.0
+        uses: ZacJW/markdown-html-action@1.2.0
         with:
-          build_html: true
-          build_pdf: false
-          table_of_contents: false
-          input_path: build/index.md
-          output_dir: build
+          input_files: '[["${{github.workspace}}/build/index.md"]]'
+          output_files: '["${{github.workspace}}/build/index.html"]'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           # Upload the generated html
-          path: build/index.html
+          path: ${{github.workspace}}/build/index.html
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2

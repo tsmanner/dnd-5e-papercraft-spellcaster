@@ -39,6 +39,8 @@ jobs:
         run: cmake --build build
       - name: Generate Markdown
         run: build/main > build/index.md
+      - name: Make Deploy Directory
+        run: mkdir deploy
       - name: Generate HTML
         uses: ZacJW/markdown-html-action@1.2.0
         with:

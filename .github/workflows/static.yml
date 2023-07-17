@@ -34,21 +34,21 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Configure
-        run: cmake -S ${{github.workspace}}/src -B ${{github.workspace}}/build
+        run: cmake -S ${{github.workspace}}/src -B build
       - name: Build Exe
-        run: cmake --build ${{github.workspace}}/build
+        run: cmake --build build
       - name: Generate Markdown
-        run: ${{github.workspace}}/build/main ${{github.workspace}} > ${{github.workspace}}/build/index.md
+        run: build/main > build/index.md
       - name: Generate HTML
         uses: ZacJW/markdown-html-action@1.2.0
         with:
-          input_files: '[["${{github.workspace}}/build/index.md"]]'
-          output_files: '["${{github.workspace}}/build/index.html"]'
+          input_files: '[["build/index.md"]]'
+          output_files: '["build/index.html"]'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           # Upload the generated html
-          path: ${{github.workspace}}/build/index.html
+          path: build/index.html
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2

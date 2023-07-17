@@ -45,8 +45,8 @@ jobs:
           build_html: true
           build_pdf: false
           table_of_contents: false
-          input_path: build/index.md
-          output_dir: build
+          input_path: ${{github.workspace}}/build/index.md
+          output_dir: ${{github.workspace}}/build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:

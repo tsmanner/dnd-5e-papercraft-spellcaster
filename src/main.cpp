@@ -12,33 +12,6 @@ namespace fs = std::filesystem;
 
 
 template <typename ..._Ts>
-int processFileWithArgs(
-  fs::path const &in_path,
-  fs::path const &out_path,
-  std::tuple<_Ts ...> const &args
-) {
-  if (fs::is_regular_file(in_path)) {
-    auto in_f = std::fopen(in_path.c_str(), "r");
-    if (in_f) {
-      auto out_f = out_path == "-" ? stdout : std::fopen(out_path.c_str(), "w");
-      if (out_f) {
-        std::vector<char> buf (fs::file_size(in_path));
-        if (std::fread(buf.data(), sizeof(buf.front()), buf.size(), in_f)) {
-          fmt::print(out_f, buf.data(), fmt::arg(_Ts::name, std::get<_Ts>(args).value)...);
-        }
-        // Don't try to close stdout
-        if (out_path == "-") {
-          std::fclose(out_f);
-        }
-      }
-      std::fclose(in_f);
-    }
-  }
-  return 0;
-}
-
-
-template <typename ..._Ts>
 std::string formatTable(std::string const &format, _Ts ...fs) {
   std::string result {};
   for (uint8_t lvl = 1; lvl <= 20; ++lvl) {
@@ -100,33 +73,142 @@ std::string formatTable() {
 }
 
 
-template <typename _Archetype, typename _Format>
-void print(_Format const &format) {
-  fmt::print(
-    format,
-    fmt::arg("table", formatTable<_Archetype>()),
-    fmt::arg("hit_die", _Archetype::hit_die),
-    fmt::arg("hit_die_ev", _Archetype::hit_die / 2 + 1),
-    fmt::arg("skills", "Animal Handling, Nature, Sleight of Hand, Survival"),
-    fmt::arg("Class", _Archetype::name),
-    fmt::arg("class", toLowerCase(_Archetype::name))
-  );
+struct Arg {
+  template <typename _T>
+  Arg(std::string const &in_name, _T const &in_value) : name(in_name), value(fmt::format("{}", in_value)) {}
+
+  std::string name;
+  std::string value;
+};
+
+using ArgStore = std::vector<Arg>;
+
+
+std::string fopenErrnoName() {
+  switch (errno) {
+  case EACCES: return "EACCES";
+  case EINTR: return "EINTR";
+  case EINVAL: return "EINVAL";
+  case EISDIR: return "EISDIR";
+  case ELOOP: return "ELOOP";
+  case EMFILE: return "EMFILE";
+  case ENAMETOOLONG: return "ENAMETOOLONG";
+  case ENFILE: return "ENFILE";
+  case ENOENT: return "ENOENT";
+  case ENOMEM: return "ENOMEM";
+  case ENOSPC: return "ENOSPC";
+  case ENOTDIR: return "ENOTDIR";
+  case ENXIO: return "ENXIO";
+  case EOVERFLOW: return "EOVERFLOW";
+  case EROFS: return "EROFS";
+  case ETXTBSY: return "ETXTBSY";
+  default: return fmt::format("E?({})", errno);
+  }
 }
 
-int main() {
-  auto template_path = fs::path("../../template.md");
-  if (fs::is_regular_file(template_path)) {
-    auto template_file = std::fopen(template_path.c_str(), "r");
-    if (template_file) {
-      std::vector<char> buf (fs::file_size(template_path));
-      if (std::fread(buf.data(), sizeof(char), buf.size(), template_file)) {
-        print<Orikami>(buf.data());
-        fmt::print("\n");
-        print<Oriken>(buf.data());
+
+std::string getFormattedFile(fs::path const &path, ArgStore const &args) {
+  fmt::print(stderr, "Formatting '{}'\n", path.c_str());
+  auto file = fopen(path.c_str(), "r");
+  if (file) {
+    std::vector<char> buf(fs::file_size(path) + 1);
+    std::size_t chars_read = fread(buf.data(), sizeof(char), buf.size(), file);
+    if (chars_read) {
+      buf[chars_read] = '\0';
+      auto store = fmt::dynamic_format_arg_store<fmt::format_context>();
+      for (auto const &arg : args) {
+        store.push_back(fmt::arg(arg.name.c_str(), arg.value));
       }
-      fclose(template_file);
+      return fmt::vformat(buf.data(), store);
+    }
+  } else {
+    fmt::print(stderr, "Error [{}] opening file '{}'\n", fopenErrnoName(), path.c_str());
+    throw "";
+  }
+  return "";
+}
+
+
+template <typename _Archetype>
+ArgStore const &getBaseArgStore() {
+  static ArgStore store = {
+    {"table", formatTable<_Archetype>()},
+    {"spell_list", _Archetype::spell_list},
+    {"hit_die", _Archetype::hit_die},
+    {"hit_die_ev", _Archetype::hit_die / 2 + 1},
+    {"skills", "Animal Handling, Nature, Sleight of Hand, Survival"},
+    {"Class", _Archetype::name},
+    {"class", toLowerCase(_Archetype::name)},
+    {"quick_build_ability_2", _Archetype::quick_build_ability_2},
+  };
+  return store;
+}
+
+
+template <typename _Archetype>
+std::string getFormattedFeature(fs::path const &root, std::string const &stem) {
+  // Search the archetype's directory first.
+  // If nothing is found, check the default directory.
+  // If nothing is found, error?
+  auto archetype_path = root / "archetypes" / toLowerCase(_Archetype::name) / fmt::format("{}.md", stem);
+  if (fs::is_regular_file(archetype_path)) {
+    return getFormattedFile(archetype_path, getBaseArgStore<_Archetype>());
+  }
+  auto default_path = root / "archetypes" / "default" / fmt::format("{}.md", stem);
+  if (fs::is_regular_file(default_path)) {
+    return getFormattedFile(default_path, getBaseArgStore<_Archetype>());
+  }
+  fmt::print(stderr, "Feature-file for '{}' not found.  Please create one of the following files:\n", stem);
+  fmt::print(stderr, "    {}\n", archetype_path.c_str());
+  fmt::print(stderr, "    {}\n", default_path.c_str());
+  throw "";
+}
+
+
+template <typename _Archetype>
+ArgStore makeArgStore(fs::path const &root) {
+  ArgStore args = getBaseArgStore<_Archetype>();
+
+  { std::vector<std::string> feature_names;
+    for (uint8_t level = 1; level < 20; ++level) {
+      for (auto const &feature : _Archetype::levelFeatures(level)) {
+        if (std::find(feature_names.begin(), feature_names.end(), feature) == feature_names.end()) {
+          feature_names.push_back(feature);
+        }
+      }
+    }
+
+    std::string features {};
+    for (auto const &feature : feature_names) {
+      features = fmt::format("{}\n{}", features, getFormattedFeature<_Archetype>(root, toTokenName(feature)));
+    }
+    args.push_back({"features", features});
+  }
+
+  { auto path = root / "archetypes" / toLowerCase(_Archetype::name) / "Flavor.md";
+    if (fs::is_regular_file(path)) {
+      args.push_back({"flavor", getFormattedFile(path, getBaseArgStore<_Archetype>())});
+    } else {
+      fmt::print(stderr, "{} flavor file for not found.  Please create {}\n", _Archetype::name, path.c_str());
     }
   }
+
+  return args;
+}
+
+
+int main(int argc, char const *argv[]) {
+  fs::path root {};
+  if (argc == 1) {
+    root = ".";
+  } else if (argc == 2) {
+    root = argv[1];
+  } else {
+    fmt::print(stderr, "usage: main [<root>]\n    root    Relative path that should be used as the root path.  Default is '.'.\n");
+  }
+
+  fmt::print("{}", getFormattedFile(root / "template.md", makeArgStore<Orikami>(root)));
+  fmt::print("{}", getFormattedFile(root / "template.md", makeArgStore<Oriken>(root)));
 
   return 0;
 }

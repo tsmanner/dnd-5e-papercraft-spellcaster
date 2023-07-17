@@ -1,16 +1,12 @@
 # {Class}
 
 
-## Flavor 1 : e.g. 'Power of Nature'
-
-
-## Flavor 2 : e.g. 'Preserve the Balance'
-
+{flavor}
 
 ## Creating an {Class}
 
-### Quick Build (pref as a 'note' box)
-
+> **Quick Build**
+> You can make an {class} by following these suggestions.  First, make Dexterity your highest ability score, followed by {quick_build_ability_2}.  Second, choose the Far Traveler background.
 
 ## The {Class} Table
 
@@ -22,7 +18,9 @@
 
 ## Class Features
 
-As a {class}, you gain the following class features.
+As an {class}, you gain the following class features.
+
+{features}
 
 
 ### Hit Points
@@ -38,7 +36,7 @@ As a {class}, you gain the following class features.
 **Weapons:**<br/>
 **Tools:**<br/>
 **Saving Throws:**<br/>
-**Skills:** Choose N from {skills}
+**Skills:** Choose 2 from {skills}
 
 
 ### Equipment

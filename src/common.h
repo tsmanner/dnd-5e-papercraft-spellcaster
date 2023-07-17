@@ -8,6 +8,15 @@
 #include <fmt/ranges.h>
 
 
+std::string toLowerCase(std::string const &);
+
+std::string toUpperCase(std::string const &);
+
+std::string slugify(std::string const &);
+
+std::string toTokenName(std::string const &);
+
+
 constexpr char toLowerCase(char c) {
   if ('A' <= c and c <= 'Z') {
     return c - 'A' + 'a';
@@ -15,22 +24,12 @@ constexpr char toLowerCase(char c) {
   return c;
 }
 
-std::string toLowerCase(std::string const &s) {
-  std::string result {};
-  for (auto c : s) {
-    result.push_back(toLowerCase(c));
-  }
-  return result;
-}
-
-
 constexpr char toUpperCase(char c) {
   if ('a' <= c and c <= 'z') {
     return c - 'a' + 'A';
   }
   return c;
 }
-
 
 constexpr char slugifyChar(char c) {
   switch (c) {
@@ -121,21 +120,19 @@ constexpr char slugifyChar(char c) {
   }
 }
 
-
-std::string slugify(std::string const &value) {
-  std::string result;
-  result.reserve(value.size());
-  for (std::size_t read_i = 0; read_i < value.size(); ++read_i) {
-    auto c = slugifyChar(value[read_i]);
-    if (c) {
-      result.push_back(c);
-    }
+constexpr char toTokenChar(char c) {
+  if (
+    ('a' <= c and c <= 'z') or
+    ('A' <= c and c <= 'Z') or
+    ('0' <= c and c <= '9')
+  ) {
+    return c;
   }
-  return result;
+  return '_';
 }
 
 
-uint8_t proficiencyBonus(uint8_t in_level) {
+constexpr uint8_t proficiencyBonus(uint8_t in_level) {
   return (in_level + 7) / 4;
 }
 
@@ -207,15 +204,7 @@ struct FullCaster {
   );
 
   static constexpr auto spell_column_names = std::make_tuple(
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9"
+    "1", "2", "3", "4", "5", "6", "7", "8", "9"
   );
 
 };
@@ -248,11 +237,7 @@ struct HalfCaster {
   );
 
   static constexpr auto spell_column_names = std::make_tuple(
-    "1",
-    "2",
-    "3",
-    "4",
-    "5"
+    "1", "2", "3", "4", "5"
   );
 
 };

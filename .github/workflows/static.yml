@@ -42,12 +42,9 @@ jobs:
       - name: Make Deploy Directory
         run: mkdir deploy
       - name: Generate HTML
-        uses: ZacJW/markdown-html-action@1.2.0
-        with:
-          input_files: '[["build/index.md"]]'
-          output_files: '["deploy/index.html"]'
-          packages: 'pymdown-extensions'
-          extensions: '["pymdownx.extra"]'
+        run: gh api --method POST /markdown -F text=@build/index.md > deploy/index.html
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:

@@ -43,12 +43,12 @@ jobs:
         uses: ZacJW/markdown-html-action@1.2.0
         with:
           input_files: '[["build/index.md"]]'
-          output_files: '["build/index.html"]'
+          output_files: '["deploy/index.html"]'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           # Upload the generated html
-          path: build/index.html
+          path: build
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2

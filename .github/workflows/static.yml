@@ -40,7 +40,7 @@ jobs:
       - name: Generate Markdown
         run: ${{github.workspace}}/build/main ${{github.workspace}} > ${{github.workspace}}/build/index.md
       - name: Generate HTML
-        uses: baileyjm02/markdown-to-pdf@v1.2
+        uses: baileyjm02/markdown-to-pdf@v1.2.0
         with:
           build_html: true
           build_pdf: false

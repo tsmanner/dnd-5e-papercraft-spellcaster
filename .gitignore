@@ -1,0 +1,13 @@
+*
+!.gitignore
+!*.md
+!LICENSE
+!src/
+!archetypes/
+!archetypes/default/
+!archetypes/orikami/
+!archetypes/oribodai/
+!archetypes/oriken/
+!src/*.cpp
+!src/*.h
+!src/CMakeLists.txt

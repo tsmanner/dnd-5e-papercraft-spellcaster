@@ -147,7 +147,7 @@ struct Columns {
     LevelFeatures const &values = _T::levelFeatures(in_level);
     std::vector<std::string> links(values.size());
     for (uint8_t i = 0; i < values.size(); ++i) {
-      links[i] = fmt::format("[{}](#{})", values[i], slugify(values[i]));
+      links[i] = fmt::format("[{}](#{}-{})", values[i], toLowerCase(_T::name), slugify(values[i]));
     }
     return fmt::format("{}", fmt::join(links, ", "));
   }

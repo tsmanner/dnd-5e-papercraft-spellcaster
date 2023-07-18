@@ -146,19 +146,30 @@ ArgStore const &getBaseArgStore() {
 
 
 template <typename _Archetype>
-std::string getFormattedFeature(fs::path const &root, std::string const &stem) {
+std::string getFormattedFeature(fs::path const &root, std::string const &feature) {
   // Search the archetype's directory first.
   // If nothing is found, check the default directory.
   // If nothing is found, error?
-  auto archetype_path = root / "archetypes" / toLowerCase(_Archetype::name) / fmt::format("{}.md", stem);
+  constexpr auto feature_format = "<a id=\"{}-{}\"></a>\n\n{}";
+  auto archetype_path = root / "archetypes" / toLowerCase(_Archetype::name) / fmt::format("{}.md", toTokenName(feature));
   if (fs::is_regular_file(archetype_path)) {
-    return getFormattedFile(archetype_path, getBaseArgStore<_Archetype>());
+    return fmt::format(
+      feature_format,
+      toLowerCase(_Archetype::name),
+      slugify(feature),
+      getFormattedFile(archetype_path, getBaseArgStore<_Archetype>())
+    );
   }
-  auto default_path = root / "archetypes" / "default" / fmt::format("{}.md", stem);
+  auto default_path = root / "archetypes" / "default" / fmt::format("{}.md", toTokenName(feature));
   if (fs::is_regular_file(default_path)) {
-    return getFormattedFile(default_path, getBaseArgStore<_Archetype>());
+    return fmt::format(
+      feature_format,
+      toLowerCase(_Archetype::name),
+      slugify(feature),
+      getFormattedFile(default_path, getBaseArgStore<_Archetype>())
+    );
   }
-  fmt::print(stderr, "Feature-file for '{}' not found.  Please create one of the following files:\n", stem);
+  fmt::print(stderr, "Feature-file for '{}' not found.  Please create one of the following files:\n", toTokenName(feature));
   fmt::print(stderr, "    {}\n", archetype_path.c_str());
   fmt::print(stderr, "    {}\n", default_path.c_str());
   throw "";
@@ -180,7 +191,7 @@ ArgStore makeArgStore(fs::path const &root) {
 
     std::string features {};
     for (auto const &feature : feature_names) {
-      features = fmt::format("{}\n{}", features, getFormattedFeature<_Archetype>(root, toTokenName(feature)));
+      features = fmt::format("{}\n{}", features, getFormattedFeature<_Archetype>(root, feature));
     }
     args.push_back({"features", features});
   }

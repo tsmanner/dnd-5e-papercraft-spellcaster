@@ -33,18 +33,14 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - name: Make Deploy Directory
+        run: mkdir deploy
       - name: Configure
         run: cmake -S ${{github.workspace}}/src -B build
       - name: Build Exe
         run: cmake --build build
-      - name: Generate Markdown
-        run: build/main > build/index.md
-      - name: Make Deploy Directory
-        run: mkdir deploy
       - name: Generate HTML
-        run: gh api --method POST /markdown -F text=@build/index.md > deploy/index.html
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: build/main | build/_deps/cmark-gfm-build/src/cmark-gfm --unsafe -e table > deploy/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:

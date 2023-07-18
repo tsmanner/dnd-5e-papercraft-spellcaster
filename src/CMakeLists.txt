@@ -15,6 +15,13 @@ FetchContent_Declare(
   GIT_TAG 10.0.0
 )
 
+FetchContent_Declare(
+  cmark-gfm
+  GIT_REPOSITORY https://github.com/github/cmark-gfm.git
+  GIT_TAG 0.29.0.gfm.12
+)
+
+FetchContent_MakeAvailable(cmark-gfm)
 FetchContent_MakeAvailable(fmt)
 
 add_executable(main main.cpp common.cpp)

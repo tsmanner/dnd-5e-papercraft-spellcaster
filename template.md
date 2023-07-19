@@ -1,3 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+table {{
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: block;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  margin-top: 0;
+  max-width: 100%;
+  overflow: auto;
+  width: max-content;
+  word-wrap: break-word;
+}}
+table td {{
+  border-collapse: collapse;
+  border-color: #736b5e;
+  border-spacing: 0;
+  border-style: solid;
+  border-width: 1px;
+}}
+table th {{
+  border-collapse: collapse;
+  border-color: #736b5e;
+  border-spacing: 0;
+  border-style: solid;
+  border-width: 1px;
+}}
+a {{
+  color: #1111EE;
+}}
+* {{
+  background-color: #202324;
+  color: #EEEEEE;
+}}
+</style>
+</head>
+
 # {Class}
 
 
@@ -41,3 +83,4 @@ As an {class}, you gain the following class features.
 
 ### Equipment
 
+</html>

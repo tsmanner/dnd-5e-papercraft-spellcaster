@@ -24,5 +24,21 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(cmark-gfm)
 FetchContent_MakeAvailable(fmt)
 
-add_executable(main main.cpp common.cpp)
-target_link_libraries(main PRIVATE fmt::fmt)
+add_executable(
+  main
+  main.cpp
+  common.cpp
+)
+target_include_directories(
+  main
+  PRIVATE
+  ${cmark-gfm_SOURCE_DIR}/src
+  ${cmark-gfm_BINARY_DIR}/src
+)
+target_link_libraries(
+  main
+  PRIVATE
+  fmt::fmt
+  libcmark-gfm
+  libcmark-gfm-extensions
+)

@@ -7,6 +7,14 @@
 #include "orikami.h"
 #include "oriken.h"
 
+#include <cmark-gfm.h>
+
+extern "C" {
+  #include <parser.h>
+  #include <../extensions/cmark-gfm-core-extensions.h>
+  // #include <../extensions/table.h>
+}
+
 
 namespace fs = std::filesystem;
 
@@ -107,6 +115,15 @@ std::string fopenErrnoName() {
 }
 
 
+std::string getFormattedString(char const *string, ArgStore const &args) {
+  auto store = fmt::dynamic_format_arg_store<fmt::format_context>();
+  for (auto const &arg : args) {
+    store.push_back(fmt::arg(arg.name.c_str(), arg.value));
+  }
+  return fmt::vformat(string, store);
+}
+
+
 std::string getFormattedFile(fs::path const &path, ArgStore const &args) {
   fmt::print(stderr, "Formatting '{}'\n", path.c_str());
   auto file = fopen(path.c_str(), "r");
@@ -115,11 +132,7 @@ std::string getFormattedFile(fs::path const &path, ArgStore const &args) {
     std::size_t chars_read = fread(buf.data(), sizeof(char), buf.size(), file);
     if (chars_read) {
       buf[chars_read] = '\0';
-      auto store = fmt::dynamic_format_arg_store<fmt::format_context>();
-      for (auto const &arg : args) {
-        store.push_back(fmt::arg(arg.name.c_str(), arg.value));
-      }
-      return fmt::vformat(buf.data(), store);
+      return getFormattedString(buf.data(), args);
     }
   } else {
     fmt::print(stderr, "Error [{}] opening file '{}'\n", fopenErrnoName(), path.c_str());
@@ -146,12 +159,12 @@ ArgStore const &getBaseArgStore() {
 
 
 template <typename _Archetype>
-std::string getFormattedFeature(fs::path const &root, std::string const &feature) {
+std::string getFormattedFeature(std::string const &feature) {
   // Search the archetype's directory first.
   // If nothing is found, check the default directory.
   // If nothing is found, error?
   constexpr auto feature_format = "<a id=\"{}-{}\"></a>\n\n{}";
-  auto archetype_path = root / "archetypes" / toLowerCase(_Archetype::name) / fmt::format("{}.md", toTokenName(feature));
+  auto archetype_path = fs::path{"archetypes"} / toLowerCase(_Archetype::name) / fmt::format("{}.md", toTokenName(feature));
   if (fs::is_regular_file(archetype_path)) {
     return fmt::format(
       feature_format,
@@ -160,7 +173,7 @@ std::string getFormattedFeature(fs::path const &root, std::string const &feature
       getFormattedFile(archetype_path, getBaseArgStore<_Archetype>())
     );
   }
-  auto default_path = root / "archetypes" / "default" / fmt::format("{}.md", toTokenName(feature));
+  auto default_path = fs::path{"archetypes"} / "default" / fmt::format("{}.md", toTokenName(feature));
   if (fs::is_regular_file(default_path)) {
     return fmt::format(
       feature_format,
@@ -177,7 +190,7 @@ std::string getFormattedFeature(fs::path const &root, std::string const &feature
 
 
 template <typename _Archetype>
-ArgStore makeArgStore(fs::path const &root) {
+ArgStore makeArgStore() {
   ArgStore args = getBaseArgStore<_Archetype>();
 
   { std::vector<std::string> feature_names;
@@ -191,12 +204,12 @@ ArgStore makeArgStore(fs::path const &root) {
 
     std::string features {};
     for (auto const &feature : feature_names) {
-      features = fmt::format("{}\n{}", features, getFormattedFeature<_Archetype>(root, feature));
+      features = fmt::format("{}\n{}", features, getFormattedFeature<_Archetype>(feature));
     }
     args.push_back({"features", features});
   }
 
-  { auto path = root / "archetypes" / toLowerCase(_Archetype::name) / "Flavor.md";
+  { auto path = fs::path{"archetypes"} / toLowerCase(_Archetype::name) / "Flavor.md";
     if (fs::is_regular_file(path)) {
       args.push_back({"flavor", getFormattedFile(path, getBaseArgStore<_Archetype>())});
     } else {
@@ -208,18 +221,51 @@ ArgStore makeArgStore(fs::path const &root) {
 }
 
 
-int main(int argc, char const *argv[]) {
-  fs::path root {};
-  if (argc == 1) {
-    root = ".";
-  } else if (argc == 2) {
-    root = argv[1];
-  } else {
-    fmt::print(stderr, "usage: main [<root>]\n    root    Relative path that should be used as the root path.  Default is '.'.\n");
+template <typename _Archetype>
+void addToOutput(std::string &toc, std::string &body) {
+  // Append this archetype's TOC entry.
+  toc = fmt::format("{}{}\n", toc, getFormattedString("- [{Class}](#{class})", getBaseArgStore<_Archetype>()));
+
+  // Specialize the archetype file.
+  auto md = getFormattedFile("templates/archetype.md", makeArgStore<_Archetype>());
+  // Parse the archetype Markdown into HTML.
+  auto parser = cmark_parser_new_with_mem(CMARK_OPT_UNSAFE, cmark_get_arena_mem_allocator());
+  cmark_parser_attach_syntax_extension(parser, cmark_find_syntax_extension("table"));
+  cmark_parser_feed(parser, md.c_str(), md.size());
+  auto doc = cmark_parser_finish(parser);
+  auto html = cmark_render_html(doc, CMARK_OPT_UNSAFE, parser->syntax_extensions);
+
+  body = fmt::format("{}{}\n", body, html);
+  cmark_arena_reset();
+}
+
+
+int main() {
+  cmark_gfm_core_extensions_ensure_registered();
+
+  std::string toc {};
+  std::string body {};
+
+  addToOutput<Orikami>(toc, body);
+  addToOutput<Oriken>(toc, body);
+
+  { auto parser = cmark_parser_new_with_mem(CMARK_OPT_UNSAFE, cmark_get_arena_mem_allocator());
+    cmark_parser_attach_syntax_extension(parser, cmark_find_syntax_extension("table"));
+    cmark_parser_feed(parser, toc.c_str(), toc.size());
+    auto doc = cmark_parser_finish(parser);
+    toc = cmark_render_html(doc, CMARK_OPT_UNSAFE, parser->syntax_extensions);
+    cmark_arena_reset();
   }
 
-  fmt::print("{}", getFormattedFile(root / "template.md", makeArgStore<Orikami>(root)));
-  fmt::print("{}", getFormattedFile(root / "template.md", makeArgStore<Oriken>(root)));
+  fmt::print(
+    "{}",
+    getFormattedFile(
+      "templates/index.html",
+      { { "toc", toc }
+      , { "body", body }
+      }
+    )
+  );
 
   return 0;
 }

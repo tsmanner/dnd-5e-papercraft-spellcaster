@@ -31,7 +31,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Pages
+        with:
+          fetch-depth: 0
+      - name: Configure Pages
         uses: actions/configure-pages@v3
       - name: Make Deploy Directory
         run: mkdir deploy
@@ -40,11 +42,12 @@ jobs:
       - name: Build Exe
         run: cmake --build build
       - name: Generate HTML
-        run: build/main | build/_deps/cmark-gfm-build/src/cmark-gfm --unsafe -e table > deploy/index.html
+        run: build/main > deploy/index.html
+      - name: Package CSS
+        run: cp templates/styles.css deploy/styles.css
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          # Upload the generated html
           path: deploy
       - name: Deploy to GitHub Pages
         id: deployment

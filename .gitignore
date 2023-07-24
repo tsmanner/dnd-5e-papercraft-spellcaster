@@ -2,6 +2,7 @@
 !.gitignore
 !*.md
 !LICENSE
+!gen-all.sh
 !src/
 !archetypes/
 !archetypes/default/

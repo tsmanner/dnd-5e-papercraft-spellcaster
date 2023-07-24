@@ -2,8 +2,10 @@
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on pushes and PRs targeting the default branch
   push:
+    branches: ["main"]
+  pull_request:
     branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -31,20 +33,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Pages
+        with:
+          fetch-depth: 0
+      - name: Configure Pages
         uses: actions/configure-pages@v3
-      - name: Make Deploy Directory
-        run: mkdir deploy
-      - name: Configure
-        run: cmake -S ${{github.workspace}}/src -B build
-      - name: Build Exe
-        run: cmake --build build
-      - name: Generate HTML
-        run: build/main | build/_deps/cmark-gfm-build/src/cmark-gfm --unsafe -e table > deploy/index.html
+      - name: Build the page(s)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: ./gen-all.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          # Upload the generated html
           path: deploy
       - name: Deploy to GitHub Pages
         id: deployment

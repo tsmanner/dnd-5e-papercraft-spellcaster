@@ -38,7 +38,7 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v3
       - name: Build the page(s)
-        run: gen-all.sh
+        run: ./gen-all.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:

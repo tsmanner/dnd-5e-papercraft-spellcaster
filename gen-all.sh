@@ -19,7 +19,7 @@ query() {
 
 checkout() {
   _pr=$1
-  git checkout -q -f $(git rev-parse main)
+  git checkout -q -f $(git rev-parse origin/main)
   git merge -m "Merge PR#$_pr to generate page." $(query ".[] | select(.number==$_pr) | .headRefName")
 }
 

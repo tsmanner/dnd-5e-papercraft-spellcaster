@@ -5,7 +5,7 @@ on:
   # Runs on pushes and PRs targeting the default branch
   push:
     branches: ["main"]
-  pull_request:
+  pull_request_target:
     branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -31,20 +31,27 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Main
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          path: main
+          ref: main
+      - name: Checkout HEAD
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          path: head
       - name: Configure Pages
         uses: actions/configure-pages@v3
       - name: Build the page(s)
         env:
           GH_TOKEN: ${{ github.token }}
-        run: ./gen-all.sh
+        run: cd head && ../main/gen-all.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: deploy
+          path: head/deploy
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2

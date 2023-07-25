@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+_ref=$(git branch --show-current)
 
 
 prs="$(gh pr list --json number,title,baseRefName,headRefName)"
@@ -45,7 +46,7 @@ fi
 printf "" > build/links.md
 
 
-git checkout -f $(git rev-parse main)
+git checkout -f $(git rev-parse origin/main)
 gen Main main
 
 
@@ -62,3 +63,6 @@ printf "<html>\n" >> deploy/index.html
 printf "<head><link rel="stylesheet" href="main/styles.css"/></head>\n" >> deploy/index.html
 build/_deps/cmark-gfm-build/src/cmark-gfm build/links.md >> deploy/index.html
 printf "</html>\n" >> deploy/index.html
+
+
+git checkout $_ref

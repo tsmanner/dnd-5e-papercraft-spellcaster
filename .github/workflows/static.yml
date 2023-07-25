@@ -34,7 +34,6 @@ jobs:
       - name: Checkout Main
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
           path: main
           ref: main
       - name: Checkout HEAD
@@ -47,7 +46,7 @@ jobs:
       - name: Build the page(s)
         env:
           GH_TOKEN: ${{ github.token }}
-        run: cd head && ../main/gen-all.sh
+        run: cd head && ../main/tools/gen-all.sh
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:

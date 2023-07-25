@@ -12,6 +12,7 @@ table {
   width: max-content;
   word-wrap: break-word;
 }
+
 table td {
   border-collapse: collapse;
   border-color: #736b5e;
@@ -29,9 +30,11 @@ table th {
   border-width: 1px;
   padding: 6px 13px;
 }
+
 a {
   color: #3399FF;
 }
+
 * {
   background-color: #202324;
   color: #EEEEEE;

@@ -196,6 +196,22 @@ struct Columns {
 };
 
 
+struct SpellSlots {
+  uint8_t value;
+};
+
+template<>
+struct fmt::formatter<SpellSlots> : public formatter<uint8_t> {
+  auto format(SpellSlots const &slots, format_context &ctx) const -> format_context::iterator {
+    if (slots.value) {
+      return formatter<uint8_t>::format(slots.value, ctx);
+    } else {
+      return fmt::format_to(ctx.out(), "-");
+    }
+  }
+};
+
+
 struct FullCaster {
   static uint8_t origamiCap(uint8_t level) {
     return 2 * level;
@@ -214,20 +230,20 @@ struct FullCaster {
     };
 
   template <uint8_t _slot>
-  static uint8_t spellSlots(uint8_t level) {
-    return spell_slots[_slot - 1][level - 1];
+  static SpellSlots spellSlots(uint8_t level) {
+    return {spell_slots[_slot - 1][level - 1]};
   }
 
   static constexpr auto spell_columns = std::make_tuple(
-    Column<uint8_t, spellSlots<1>>{},
-    Column<uint8_t, spellSlots<2>>{},
-    Column<uint8_t, spellSlots<3>>{},
-    Column<uint8_t, spellSlots<4>>{},
-    Column<uint8_t, spellSlots<5>>{},
-    Column<uint8_t, spellSlots<6>>{},
-    Column<uint8_t, spellSlots<7>>{},
-    Column<uint8_t, spellSlots<8>>{},
-    Column<uint8_t, spellSlots<9>>{}
+    Column<SpellSlots, spellSlots<1>>{},
+    Column<SpellSlots, spellSlots<2>>{},
+    Column<SpellSlots, spellSlots<3>>{},
+    Column<SpellSlots, spellSlots<4>>{},
+    Column<SpellSlots, spellSlots<5>>{},
+    Column<SpellSlots, spellSlots<6>>{},
+    Column<SpellSlots, spellSlots<7>>{},
+    Column<SpellSlots, spellSlots<8>>{},
+    Column<SpellSlots, spellSlots<9>>{}
   );
 
   static constexpr auto spell_column_names = std::make_tuple(
@@ -251,16 +267,16 @@ struct HalfCaster {
     };
 
   template <uint8_t _slot>
-  static uint8_t spellSlots(uint8_t level) {
-    return spell_slots[_slot - 1][level - 1];
+  static SpellSlots spellSlots(uint8_t level) {
+    return {spell_slots[_slot - 1][level - 1]};
   }
 
   static constexpr auto spell_columns = std::make_tuple(
-    Column<uint8_t, spellSlots<1>>{},
-    Column<uint8_t, spellSlots<2>>{},
-    Column<uint8_t, spellSlots<3>>{},
-    Column<uint8_t, spellSlots<4>>{},
-    Column<uint8_t, spellSlots<5>>{}
+    Column<SpellSlots, spellSlots<1>>{},
+    Column<SpellSlots, spellSlots<2>>{},
+    Column<SpellSlots, spellSlots<3>>{},
+    Column<SpellSlots, spellSlots<4>>{},
+    Column<SpellSlots, spellSlots<5>>{}
   );
 
   static constexpr auto spell_column_names = std::make_tuple(

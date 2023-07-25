@@ -60,7 +60,7 @@ done
 printf "" > deploy/index.html
 printf "<!DOCTYPE html>\n" >> deploy/index.html
 printf "<html>\n" >> deploy/index.html
-printf "<head><link rel="stylesheet" href="main/styles.css"/></head>\n" >> deploy/index.html
+printf "<head><link rel=\"stylesheet\" href=\"main/styles.css\"/></head>\n" >> deploy/index.html
 build/_deps/cmark-gfm-build/src/cmark-gfm build/links.md >> deploy/index.html
 printf "</html>\n" >> deploy/index.html
 

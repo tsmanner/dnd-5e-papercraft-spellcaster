@@ -39,3 +39,19 @@ a {
   background-color: #202324;
   color: #EEEEEE;
 }
+
+.orikami-table tr > :nth-child(2) {
+  width: 11ch;
+}
+
+.orikami-table tr > :nth-child(3) {
+  width: 30ch;
+}
+
+.orikami-table tr > :nth-child(n+4):nth-child(-n+6) {
+  width: 8ch;
+}
+
+.orikami-table tr > :nth-child(7) {
+  width: 7ch;
+}

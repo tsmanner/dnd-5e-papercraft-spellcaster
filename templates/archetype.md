@@ -12,7 +12,11 @@
 
 ## The {Class} Table
 
+<div class="{class}-table">
+
 {table}
+
+</div>
 
 
 ### Secondary flavor stuff, background ideas, etc

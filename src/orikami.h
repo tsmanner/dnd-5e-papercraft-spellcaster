@@ -13,7 +13,7 @@ struct Orikami : FullCaster {
       , {}
       , { "Familiar Spells", "Ability Score Improvement" }
       , {}
-      , {}
+      , { "Familiar Burst" }
       , {}
       , { "Ability Score Improvement" }
       , {}

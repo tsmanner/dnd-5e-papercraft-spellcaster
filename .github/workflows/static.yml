@@ -41,6 +41,8 @@ jobs:
         with:
           fetch-depth: 0
           path: head
+      - name: Git Config HEAD
+        run: cd head && git config --add user.name "GitHub Actions Static Site" && git config --add user.email "zephrincochrane@gmail.com"
       - name: Configure Pages
         uses: actions/configure-pages@v3
       - name: Build the page(s)

@@ -40,18 +40,47 @@ a {
   color: #EEEEEE;
 }
 
+/* Proficiency Bonus */
 .orikami-table tr > :nth-child(2) {
   width: 11ch;
 }
 
+/* Features */
 .orikami-table tr > :nth-child(3) {
   width: 30ch;
 }
 
-.orikami-table tr > :nth-child(n+4):nth-child(-n+6) {
+/* Familiar Cantrips */
+.orikami-table tr > :nth-child(4) {
   width: 8ch;
 }
 
+/* Familiar Spells */
+.orikami-table tr > :nth-child(5) {
+  width: 8ch;
+}
+
+/* Cantrips Known */
+.orikami-table tr > :nth-child(6) {
+  width: 8ch;
+}
+
+/* Origami Cap */
 .orikami-table tr > :nth-child(7) {
+  width: 7ch;
+}
+
+/* Proficiency Bonus */
+.oriken-table tr > :nth-child(2) {
+  width: 11ch;
+}
+
+/* Features */
+.oriken-table tr > :nth-child(3) {
+  width: 30ch;
+}
+
+/* Origami Cap */
+.oriken-table tr > :nth-child(4) {
   width: 7ch;
 }

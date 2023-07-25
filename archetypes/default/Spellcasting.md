@@ -1,6 +1,6 @@
 ### Spellcasting
 
-You channel magical energy by folding paper in particular patterns.  Orimagi are capable of drawing on magic from all sources.  See Spells Rules for the general rules of spellcasting and the Spells Listing for the {spell_list} spell [list](#spellcasting).  These spells count as orimagi spells for you, and Dexterity is your spellcasting ability for them.
+You channel magical energy by folding paper in particular patterns.  Orimagi are capable of drawing on magic from all sources.  See Spells Rules for the general rules of spellcasting and the Spells Listing for the {spell_list} spell list.  These spells count as orimagi spells for you, and Dexterity is your spellcasting ability for them.
 
 #### Cantrips
 

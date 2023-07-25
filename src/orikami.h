@@ -54,9 +54,9 @@ struct Orikami : FullCaster {
   }
 
   static constexpr auto columns = std::make_tuple(
-    familiarCantrips,
-    familiarSpells,
-    cantripsKnown
+    Column<uint8_t, familiarCantrips>{},
+    Column<uint8_t, familiarSpells>{},
+    Column<uint8_t, cantripsKnown>{}
   );
 
   static constexpr auto column_names = std::make_tuple(

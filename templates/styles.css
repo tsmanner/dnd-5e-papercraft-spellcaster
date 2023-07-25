@@ -32,7 +32,7 @@ table th {
 }
 
 a {
-  color: #3399FF;
+  color: #3D84FF;
 }
 
 * {
@@ -41,46 +41,18 @@ a {
 }
 
 /* Proficiency Bonus */
-.orikami-table tr > :nth-child(2) {
+.proficiency-bonus {
   width: 11ch;
 }
 
-/* Features */
-.orikami-table tr > :nth-child(3) {
+.features {
   width: 30ch;
 }
 
-/* Familiar Cantrips */
-.orikami-table tr > :nth-child(4) {
+.familiar-cantrips, .familiar-spells, .cantrips-known {
   width: 8ch;
 }
 
-/* Familiar Spells */
-.orikami-table tr > :nth-child(5) {
-  width: 8ch;
-}
-
-/* Cantrips Known */
-.orikami-table tr > :nth-child(6) {
-  width: 8ch;
-}
-
-/* Origami Cap */
-.orikami-table tr > :nth-child(7) {
-  width: 7ch;
-}
-
-/* Proficiency Bonus */
-.oriken-table tr > :nth-child(2) {
-  width: 11ch;
-}
-
-/* Features */
-.oriken-table tr > :nth-child(3) {
-  width: 30ch;
-}
-
-/* Origami Cap */
-.oriken-table tr > :nth-child(4) {
+.origami-cap {
   width: 7ch;
 }

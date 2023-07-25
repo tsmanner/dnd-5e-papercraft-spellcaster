@@ -2,6 +2,7 @@
 
 # {Class}
 
+---
 
 {flavor}
 

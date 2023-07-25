@@ -19,6 +19,25 @@ extern "C" {
 namespace fs = std::filesystem;
 
 
+struct Arg {
+  template <typename _T>
+  Arg(std::string const &in_name, _T const &in_value) : name(in_name), value(fmt::format("{}", in_value)) {}
+
+  std::string name;
+  std::string value;
+};
+
+
+using ArgStore = std::vector<Arg>;
+
+
+template <typename _Archetype>
+ArgStore const &getBaseArgStore();
+
+
+std::string getFormattedString(char const *, ArgStore const &);
+
+
 template <typename ..._Ts>
 std::string formatTable(std::string const &format, _Ts ...fs) {
   std::string result {};
@@ -72,24 +91,68 @@ std::string formatTable(_LevelFunctions const &fs) {
 }
 
 
+
+
+
+
+template <std::size_t _i, typename _Iter, typename ..._Ts>
+void formatTableColumnNames(_Iter out, std::tuple<_Ts...> const &names) {
+  fmt::format_to(out, "<th class=\"{}\" rowspan=\"2\">{}</th>", slugify(std::get<_i>(names)), std::get<_i>(names));
+  if constexpr (_i < sizeof...(_Ts) - 1) {
+    formatTableColumnNames<_i + 1>(out, names);
+  }
+}
+
+template <std::size_t _i, typename _Iter, typename ..._Ts>
+void formatTableSpellColumns(_Iter out, std::tuple<_Ts...> const &spells) {
+  fmt::format_to(out, "<th class=\"{}\">{}</th>", slugify(std::get<_i>(spells)), std::get<_i>(spells));
+  if constexpr (_i < sizeof...(_Ts) - 1) {
+    formatTableSpellColumns<_i + 1>(out, spells);
+  }
+}
+
 template <typename _Archetype>
-std::string formatTable() {
-  return
-    formatTableHeader(Columns<_Archetype>::names) +
-    formatTable(Columns<_Archetype>::columns)
-    ;
+std::string formatTableHead() {
+  std::string result {};
+  auto out = std::back_inserter(result);
+  fmt::format_to(out, "<thead>\n<tr>\n");
+  formatTableColumnNames<0>(std::back_inserter(result), std::get<0>(Columns<_Archetype>::names));
+  fmt::format_to(out, "<th class=\"spells\" colspan=\"{}\">Spells</th>\n</tr><tr>", std::tuple_size_v<decltype(_Archetype::spell_column_names)>);
+  formatTableSpellColumns<0>(std::back_inserter(result), std::get<1>(Columns<_Archetype>::names));
+  fmt::format_to(out, "</tr>\n</thead>\n");
+  return result;
 }
 
 
-struct Arg {
-  template <typename _T>
-  Arg(std::string const &in_name, _T const &in_value) : name(in_name), value(fmt::format("{}", in_value)) {}
+template <typename _Iter, typename ..._Ts>
+void formatTableBodyRow(_Iter out, uint8_t level, std::tuple<_Ts...> const &fs) {
+  fmt::format_to(out, "<tr>\n");
+  (fmt::format_to(out, "<td {}>{}</td>\n", _Ts::attributes, fmt::format(_Ts::format, _Ts::function(level))), ...);
+  fmt::format_to(out, "</tr>\n");
+}
 
-  std::string name;
-  std::string value;
-};
+template <typename _Archetype>
+std::string formatTableBody() {
+  std::string result {};
+  auto out = std::back_inserter(result);
+  fmt::format_to(out, "<tbody>\n");
+  for (uint8_t level = 1; level <= 20; ++level) {
+    formatTableBodyRow(out, level, Columns<_Archetype>::columns);
+  }
+  fmt::format_to(out, "</tbody>\n");
+  return result;
+}
 
-using ArgStore = std::vector<Arg>;
+
+template <typename _Archetype>
+std::string formatTable() {
+  return fmt::format(
+    "<table class=\"{class}-table\">\n{head}{body}</table>",
+    fmt::arg("class", toLowerCase(_Archetype::name)),
+    fmt::arg("head", formatTableHead<_Archetype>()),
+    fmt::arg("body", formatTableBody<_Archetype>())
+  );
+}
 
 
 std::string fopenErrnoName() {

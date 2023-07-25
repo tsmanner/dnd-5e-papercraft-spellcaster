@@ -132,9 +132,29 @@ constexpr char toTokenChar(char c) {
 }
 
 
-constexpr uint8_t proficiencyBonus(uint8_t in_level) {
-  return (in_level + 7) / 4;
+template <typename _T, _T (*_level_function)(uint8_t)>
+struct Column {
+  static constexpr auto format = "{}";
+  static constexpr auto attributes = "";
+  static constexpr _T (*function)(uint8_t) = _level_function;
+};
+
+
+constexpr uint8_t levelFn(uint8_t level) {
+  return level;
 }
+
+
+constexpr uint8_t proficiencyBonus(uint8_t level) {
+  return (level + 7) / 4;
+}
+
+template <>
+struct Column<uint8_t, proficiencyBonus> {
+  static constexpr auto format = "+{}";
+  static constexpr auto attributes = "";
+  static constexpr uint8_t (*function)(uint8_t) = proficiencyBonus;
+};
 
 
 using LevelFeatures = std::vector<std::string>;
@@ -143,35 +163,42 @@ using AllFeatures = std::array<LevelFeatures, 20>;
 
 template <typename _T>
 struct Columns {
-  static std::string features(uint8_t in_level) {
-    LevelFeatures const &values = _T::levelFeatures(in_level);
+  static std::string features(uint8_t level) {
+    LevelFeatures const &values = _T::levelFeatures(level);
     std::vector<std::string> links(values.size());
     for (uint8_t i = 0; i < values.size(); ++i) {
-      links[i] = fmt::format("[{}](#{}-{})", values[i], toLowerCase(_T::name), slugify(values[i]));
+      links[i] = fmt::format("<a href=\"#{}-{}\">{}</a>", toLowerCase(_T::name), slugify(values[i]), values[i]);
     }
     return fmt::format("{}", fmt::join(links, ", "));
   }
 
   static constexpr auto columns = std::tuple_cat(
-    std::make_tuple(features),
+    std::make_tuple(
+      Column<uint8_t, levelFn>{},
+      Column<uint8_t, proficiencyBonus>{},
+      Column<std::string, features>{}
+    ),
     _T::columns,
-    std::make_tuple(_T::origamiCap),
+    std::make_tuple(Column<uint8_t, _T::origamiCap>{}),
     _T::spell_columns
   );
 
-  static constexpr auto names = std::tuple_cat(
-    std::make_tuple("Features"),
-    _T::column_names,
-    std::make_tuple("Origami Cap"),
-    _T::spell_column_names
-  );
+  static constexpr auto names =
+    std::make_tuple(
+      std::tuple_cat(
+        std::make_tuple("Level", "Proficiency Bonus", "Features"),
+        _T::column_names,
+        std::make_tuple("Origami Cap")
+      ),
+      _T::spell_column_names
+    );
 
 };
 
 
 struct FullCaster {
-  static uint8_t origamiCap(uint8_t in_level) {
-    return 2 * in_level;
+  static uint8_t origamiCap(uint8_t level) {
+    return 2 * level;
   }
 
   static constexpr uint8_t spell_slots[9][20] =
@@ -187,20 +214,20 @@ struct FullCaster {
     };
 
   template <uint8_t _slot>
-  static uint8_t spellSlots(uint8_t in_level) {
-    return spell_slots[_slot - 1][in_level - 1];
+  static uint8_t spellSlots(uint8_t level) {
+    return spell_slots[_slot - 1][level - 1];
   }
 
   static constexpr auto spell_columns = std::make_tuple(
-    spellSlots<1>,
-    spellSlots<2>,
-    spellSlots<3>,
-    spellSlots<4>,
-    spellSlots<5>,
-    spellSlots<6>,
-    spellSlots<7>,
-    spellSlots<8>,
-    spellSlots<9>
+    Column<uint8_t, spellSlots<1>>{},
+    Column<uint8_t, spellSlots<2>>{},
+    Column<uint8_t, spellSlots<3>>{},
+    Column<uint8_t, spellSlots<4>>{},
+    Column<uint8_t, spellSlots<5>>{},
+    Column<uint8_t, spellSlots<6>>{},
+    Column<uint8_t, spellSlots<7>>{},
+    Column<uint8_t, spellSlots<8>>{},
+    Column<uint8_t, spellSlots<9>>{}
   );
 
   static constexpr auto spell_column_names = std::make_tuple(
@@ -211,8 +238,8 @@ struct FullCaster {
 
 
 struct HalfCaster {
-  static uint8_t origamiCap(uint8_t in_level) {
-    return in_level > 1 ? in_level : 0;
+  static uint8_t origamiCap(uint8_t level) {
+    return level > 1 ? level : 0;
   }
 
   static constexpr uint8_t spell_slots[5][20] =
@@ -224,16 +251,16 @@ struct HalfCaster {
     };
 
   template <uint8_t _slot>
-  static uint8_t spellSlots(uint8_t in_level) {
-    return spell_slots[_slot - 1][in_level - 1];
+  static uint8_t spellSlots(uint8_t level) {
+    return spell_slots[_slot - 1][level - 1];
   }
 
   static constexpr auto spell_columns = std::make_tuple(
-    spellSlots<1>,
-    spellSlots<2>,
-    spellSlots<3>,
-    spellSlots<4>,
-    spellSlots<5>
+    Column<uint8_t, spellSlots<1>>{},
+    Column<uint8_t, spellSlots<2>>{},
+    Column<uint8_t, spellSlots<3>>{},
+    Column<uint8_t, spellSlots<4>>{},
+    Column<uint8_t, spellSlots<5>>{}
   );
 
   static constexpr auto spell_column_names = std::make_tuple(

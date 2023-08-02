@@ -1,5 +1,7 @@
 # Orimagi
 
+[Github Pages](https://tsmanner.github.io/dnd-5e-papercraft-spellcaster/)
+
 Proposal for a homebrew D&amp;D 5e spellcasting class that casts spells by binding arcane, divine, or spiritual energy to sheets of paper through an elaborate series of folds.
 Intended to be a DEX spellcaster.  May be a full or half caster, we haven't decided yet.  The inspiration for this class is magical origami, so the archetype names all begin with "ori," the Japanese word meaning "fold."
 
